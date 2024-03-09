@@ -7,32 +7,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 // programa que lee la expresion regular (0|1)*110* bajo el primer metodo de construccion
-public class program2 {
+public class Program2 {
     FileReader archivo;
     //metodo que realiza la concatenacion de los automatas
     public void task(){
         ArrayList<String> a = new ArrayList<>();
-        LectArr(archivo, a);
+        Herramientas.LectArr(archivo, a);
         AFD2(a);
     }
     //metodo para asignar el archivo
     public void setArchivo(String arch) throws FileNotFoundException {this.archivo = new FileReader(arch);}
-        private void LectArr(FileReader arch, ArrayList<String> cad){
-            BufferedReader lect;
-            try{
-                if(arch.ready()){
-                    lect = new BufferedReader(arch);
-                    String renglon;
-                    while((renglon = lect.readLine()) != null){
-                        cad.add(renglon);
-                    }
-                }else{
-                    System.out.println("El archivo no está listo");
-                }
-            }catch(IOException e){
-                System.out.println("Error: " + e.getMessage());
-            }
-        }
 
     private void AFD2(ArrayList tx){
         int piler = 0;

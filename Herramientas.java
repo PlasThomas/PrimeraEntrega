@@ -1,5 +1,10 @@
 package programas;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Herramientas {
     public static boolean numero(char c){
         boolean numero = false;
@@ -18,5 +23,21 @@ public class Herramientas {
         if(c == 32)
             fc = true;
         return fc;
+    }
+    public static void LectArr(FileReader arch, ArrayList<String> cad){
+        BufferedReader lect;
+        try{
+            if(arch.ready()){
+                lect = new BufferedReader(arch);
+                String renglon;
+                while((renglon = lect.readLine()) != null){
+                    cad.add(renglon);
+                }
+            }else{
+                System.out.println("El archivo no está listo");
+            }
+        }catch(IOException e){
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }

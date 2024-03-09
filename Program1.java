@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 //programa que realiza la validaion de los automatas que detectan cadenas con numeros pares de 1s o impares de 0s
-public class AuFD {
+public class Program1 {
     FileReader archivo;
     //metodo que realiza la concatenacion de los automatas
     public void task(){
         String cad;
         ArrayList<String> a = new ArrayList<>();
-        LectArr(archivo, a);
+        Herramientas.LectArr(archivo, a);
         for(int i = 0; i < a.size(); i++){
             cad = a.get(i);
             System.out.println("Token "+ i);
@@ -23,23 +23,6 @@ public class AuFD {
     }
     //metodo para asignar el archivo
     public void setArchivo(String arch) throws FileNotFoundException{this.archivo = new FileReader(arch);}
-    //metodo que realiza la lectura del archivo 
-    private void LectArr(FileReader arch, ArrayList<String> cad){
-        BufferedReader lect;
-        try{
-            if(arch.ready()){
-                lect = new BufferedReader(arch);
-                String renglon;
-                while((renglon = lect.readLine()) != null){
-                    cad.add(renglon);
-                }
-            }else{
-                System.out.println("El archivo no está listo");
-            }
-        }catch(IOException e){
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
     //metodo que ejecuta el automata de numero pares de unos
     private void Adf1(String token){
         int piler = 0;

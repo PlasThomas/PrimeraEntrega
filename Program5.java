@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 //realiza la valdacion de expresiones de notacion cientifica
-public class program5 {
+public class Program5 {
     FileReader archivo;
     int [][] tabla;
     char [] lang;

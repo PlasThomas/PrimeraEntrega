@@ -1,7 +1,7 @@
 package programas;
 
 //programa que realiza la validacion del la expresion regular (0|1)*110*
-public class program3 {
+public class Program3 {
     private int indice = 0;
     private String cadena = "";
     private final char error = 'e';
