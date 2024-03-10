@@ -24,14 +24,19 @@ public class Herramientas {
             fc = true;
         return fc;
     }
-    public static void LectArr(FileReader arch, ArrayList<String> cad){
+    public static void LectArr(FileReader arch, ArrayList<String> a){
         BufferedReader lect;
+        String [] cad;
         try{
             if(arch.ready()){
                 lect = new BufferedReader(arch);
                 String renglon;
                 while((renglon = lect.readLine()) != null){
-                    cad.add(renglon);
+                    cad = renglon.split("\\s");
+                    for(int i = 0; i < cad.length; i++) {
+                        if(cad[i] != "")
+                            a.add(cad[i]);
+                    }
                 }
             }else{
                 System.out.println("El archivo no está listo");
