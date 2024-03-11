@@ -1,4 +1,4 @@
-package programas;
+package org.eqcatorce.primeraentrega.automatas;
 
 //programa que realiza la validacion del la expresion regular (0|1)*110*
 public class Program3 {

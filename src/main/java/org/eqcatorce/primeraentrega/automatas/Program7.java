@@ -1,4 +1,4 @@
-package programas;
+package org.eqcatorce.primeraentrega.automatas;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
